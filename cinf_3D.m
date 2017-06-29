@@ -17,15 +17,16 @@ function z = cinf_3D(P,len,params);
 %
 % References:
 %    [1] E.A.P. Habets and S. Gannot, 'Generating sensor signals
-%        in isotropic noise fields', Submitted to the Journal
-%        of the Acoustical Society of America, May, 2007.
+%        in isotropic noise fields', The Journal of the Acoustical 
+%        Society of America, Vol. 122, Issue 6, pp. 3464-3470, Dec. 2007.
 %
 % Authors:  E.A.P. Habets and S. Gannot
 %
-% History:  2004-11-02 - Initial version
+% History:  2007-11-02 - Initial version
 %           2010-09-16 - Minor corrections
+%           2017-06-29 - Use native waitbar
 %
-% Copyright (C) 2007,2010 E.A.P. Habets
+% Copyright (C) 2007-2017 E.A.P. Habets
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   This program is free software; you can redistribute it and/or modify

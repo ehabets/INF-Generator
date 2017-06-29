@@ -42,7 +42,7 @@ function [Cxy, f] = mycohere(varargin)
 %   Copyright (c) 1988-98 by The MathWorks, Inc.
 %   $Revision: 1.1 $  $Date: 1998/06/03 14:42:19 $
 
-error(nargchk(2,7,nargin))
+narginchk(2,7);
 x = varargin{1};
 y = varargin{2};
 %[msg,nfft,Fs,window,noverlap,p,dflag]=psdchk(varargin(3:end),x,y);

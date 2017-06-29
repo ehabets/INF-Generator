@@ -17,18 +17,19 @@ function z = sinf_3D(P,len,params)
 %
 % References:
 %    [1] E.A.P. Habets and S. Gannot, 'Generating sensor signals
-%        in isotropic noise fields', Submitted to the Journal
-%        of the Acoustical Society of America, May, 2007.
+%        in isotropic noise fields', The Journal of the Acoustical 
+%        Society of America, Vol. 122, Issue 6, pp. 3464-3470, Dec. 2007.
 %    [2] E.A.P. Habets and S. Gannot, 'Comments on Generating 
 %        sensor signals in isotropic noise fields', Technical Report,
 %        Imperial College London, Sept. 2010.
 %
 % Authors:  E.A.P. Habets and S. Gannot
 %
-% History:  2004-11-02 - Initial version
+% History:  2007-11-02 - Initial version
 %           2010-09-16 - Near-uniformly distributed points over S^2
+%           2017-20-06 - Use native waitbar
 %
-% Copyright (C) 2007,2010 E.A.P. Habets
+% Copyright (C) 2007-2017 E.A.P. Habets
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   This program is free software; you can redistribute it and/or modify
@@ -86,7 +87,7 @@ for m = 1:M
 end
 
 % Initialize waitbar
-waitbar(0,'Generating sensor signals...');
+h = waitbar(0,'Generating sensor signals...');
 
 % Calculate sensor signals in the frequency domain
 for idx = 1:N
@@ -111,4 +112,4 @@ z = real(ifft(X,NFFT,2));
 z = z(:,1:len);
 
 % Close waitbar
-waitbar;
+close(h);
