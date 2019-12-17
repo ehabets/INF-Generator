@@ -3,7 +3,7 @@
 % Example script for cinf_1D.m and cinf_3D.m
 %
 % Author        : dr.ir. Emanuel A.P. Habets
-% Date          : 16-09-2010
+% Date          : 17-12-2019
 %
 % Related paper : E.A.P. Habets and S. Gannot, 'Generating sensor signals
 %                 in isotropic noise fields', Submitted to the Journal
@@ -46,10 +46,10 @@ z = cinf_1D(d,L,params);
 % z = cinf_3D(P,L,params); 
 
 %% Calculate spatial coherences
-sc_sim = zeros(M-2,NFFT/2+1);
-sc_theory = zeros(M-2,NFFT/2+1);
+sc_sim = zeros(M-1,NFFT/2+1);
+sc_theory = zeros(M-1,NFFT/2+1);
 for m = 1:M-1
-    [sc,F]=mycohere(z(1,:)',z(m+1,:)',NFFT,fs,hanning(NFFT),0.75*NFFT);
+    [sc,F]=complex_cohere(z(1,:)',z(m+1,:)',NFFT,fs,hanning(NFFT),0.75*NFFT);
     sc_sim(m,:) = real(sc');
 
     sc_theory(m,:) = besselj(0,w*d(m+1)/c);

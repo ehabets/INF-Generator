@@ -1,4 +1,4 @@
-function z = cinf_3D(P,len,params);
+function z = cinf_3D(P,len,params)
 
 % Generating sensor signals for a 1D sensor array in a cylindrically 
 % isotropic noise field [1]
