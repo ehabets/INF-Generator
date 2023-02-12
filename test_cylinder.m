@@ -52,7 +52,7 @@ for m = 1:M-1
     [sc,F]=complex_cohere(z(1,:)',z(m+1,:)',NFFT,fs,hanning(NFFT),0.75*NFFT);
     sc_sim(m,:) = real(sc');
 
-    sc_theory(m,:) = besselj(0,w*d(m+1)/c);
+    sc_theory(m,:) = besselj(0,w*(d(m+1)-d(1))/c);
 end
 
 %% Plot results
@@ -65,7 +65,7 @@ plot(F/1000,sc_theory(m,:),'--k')
 hold off;
 xlabel('Frequency [kHz]');
 ylabel('Spatial Coherence');
-title(sprintf('Distance %1.2f m',d(m+1)));
+title(sprintf('Distance %1.2f m',d(m+1)-d(1)));
 set(gca,'DataAspectRatio',[1 0.75 1]);
 legend('Simulation','Theory');
 grid on;
@@ -79,7 +79,7 @@ plot(F/1000,sc_theory(m,:),'--k')
 hold off;
 xlabel('Frequency [kHz]');
 ylabel('Spatial Coherence');
-title(sprintf('Distance %1.2f m',d(m+1)));
+title(sprintf('Distance %1.2f m',d(m+1)-d(1)));
 set(gca,'DataAspectRatio',[1 0.75 1]);
 legend('Simulation','Theory');
 grid on;
