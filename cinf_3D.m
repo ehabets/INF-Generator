@@ -67,7 +67,7 @@ end
 w = 2*pi*fs*(0:NFFT/2)/NFFT;
 phi = 2*pi*(0:1/N_phi:1-1/N_phi);
 
-% Caculate relative positions w.r.t. sensor 1
+% Calculate relative positions w.r.t. sensor 1
 P_rel = zeros(3,M);
 for m = 1:M
     P_rel(:,m) = P(:,m) - P(:,1);

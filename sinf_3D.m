@@ -80,7 +80,7 @@ for k=1:N
     end
 end
 
-% Caculate relative positions w.r.t. sensor 1
+% Calculate relative positions w.r.t. sensor 1
 P_rel = zeros(3,M);
 for m = 1:M
     P_rel(:,m) = P(:,m) - P(:,1);
