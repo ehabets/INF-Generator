@@ -67,7 +67,7 @@ end
 w = 2*pi*fs*(0:NFFT/2)/NFFT;
 phi = 2*pi*(0:1/N_phi:1-1/N_phi);
 
-% Calculate relative sensor distances
+% Calculate sensor distances w.r.t. sensor 1
 d_rel = d - d(1);
 
 % Initialize waitbar

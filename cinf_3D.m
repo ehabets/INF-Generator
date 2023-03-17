@@ -3,7 +3,7 @@ function z = cinf_3D(P,len,params)
 % Generating sensor signals for a 1D sensor array in a cylindrically 
 % isotropic noise field [1]
 %
-%    z = cinf_1D(P,len,params)
+%    z = cinf_3D(P,len,params)
 %
 % Input parameters:
 %    P            : sensor positions
@@ -67,7 +67,7 @@ end
 w = 2*pi*fs*(0:NFFT/2)/NFFT;
 phi = 2*pi*(0:1/N_phi:1-1/N_phi);
 
-% Caculate relative positions
+% Caculate relative positions w.r.t. sensor 1
 P_rel = zeros(3,M);
 for m = 1:M
     P_rel(:,m) = P(:,m) - P(:,1);

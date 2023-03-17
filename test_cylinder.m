@@ -52,7 +52,7 @@ for m = 1:M-1
     [sc,F]=complex_cohere(z(1,:)',z(m+1,:)',NFFT,fs,hanning(NFFT),0.75*NFFT);
     sc_sim(m,:) = real(sc');
 
-    sc_theory(m,:) = besselj(0,w*d(m+1)/c);
+    sc_theory(m,:) = besselj(0,w*d(m+1)/c); % Note that d(m+1) = norm(P(:,m+1)-P(:,1),2)
 end
 
 %% Plot results
